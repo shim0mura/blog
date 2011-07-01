@@ -1,1 +1,9 @@
-<%=params[:id]%>
+<div id="main">
+<% @entries.each do |e| %>
+<h2 class="title"><%= e.title %></h2>
+<ul class="post_info"> 
+<div class="text"><%= e.text %></div>
+</ul>
+<%end%>
+<%= paginate @entries %>
+</div>

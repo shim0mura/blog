@@ -54,7 +54,8 @@ Blog::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-   match '/edit(:id)', :to => "blog#edit", :as => 'edit'
+   match '/edit/:path', :to => "blog#edit", :as => 'edit'
    match '/archive', :to => "blog#archive", :as => 'archive'
-   match '/(:id)', :to => "blog#index", :ad => 'index'
+   match '/new', :to => "blog#new", :as => 'new'
+   match '/(:path)', :to => "blog#index", :as => 'index'
 end
