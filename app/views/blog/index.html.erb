@@ -1,9 +1,11 @@
+<div id="container">
 <div id="main">
 <% @entries.each do |e| %>
-<h2 class="title"><%= e.title %></h2>
+<h2 class="title"><%=raw e.title %></h2>
 <ul class="post_info"> 
-<div class="text"><%= e.text %></div>
+<div class="text"><%=raw e.text %></div>
 </ul>
 <%end%>
 <%= paginate @entries %>
+</div>
 </div>

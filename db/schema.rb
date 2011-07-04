@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(:version => 20110630142105) do
 
-  create_table "contents", :force => true do |t|
+  create_table "entries", :force => true do |t|
     t.string   "path"
     t.string   "title"
     t.string   "title_photo_url"
