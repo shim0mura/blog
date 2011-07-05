@@ -5,11 +5,16 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+  {lang: 'ja'}
+  </script>
 </head>
 <body>
 
 <div id="header">
-<%=link_to index_path do%><h1>blog.kksg.net</h1><%end%>
+</div>
+<h2 id="title_name"><%= link_to 'blog.kksg.net', index_path %></h2>
+<div id="menu">
 <ul>
 <li><%=link_to 'about', "#"%></li>
 <li><%=link_to 'archive', "#"%></li>
@@ -19,10 +24,14 @@
 <div id="left_side">
 </div>
 
-<div id="footer">
+<div id="container">
+<div id="main">
+<%= yield %>
+</div>
 </div>
 
-<%= yield %>
+<div id="footer">
+</div>
 
 </body>
 </html>

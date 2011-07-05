@@ -1,11 +1,8 @@
-<div id="container">
-<div id="main">
 <% @entries.each do |e| %>
-<h2 class="title"><%=raw e.title %></h2>
+<h2 class="title"><%=link_to e.title,  index_path(:path => e.path)%></h2>
+<span class="created_at"><%= e.created_at %></span>
 <ul class="post_info"> 
 <div class="text"><%=raw e.text %></div>
 </ul>
 <%end%>
 <%= paginate @entries %>
-</div>
-</div>

@@ -3,6 +3,7 @@ class BlogController < ApplicationController
   def index
     if params[:path]
       @entry = Entry.find_by_path(params[:path])
+      render :entry
       return
     end
     @entries = Entry.order('created_at DESC').page(params[:page])
