@@ -1,0 +1,13 @@
+<div id="container">
+<div id="main">
+<% form_for :entry, @entry, edit_path(:path => params[:path]) do |f| %>
+<ul>
+<li><%= f.hidden_field :title %><%= f.object.title %></li>
+<li><%= f.hidden_field :path %><%= f.object.path %></li>
+<li><%= f.hidden_field :title_photo_url %><%= f.object.title_photo_url %></li>
+<li><%=raw f.hidden_field :text, :value => raw_br(f.object.text) %><%=raw raw_br(f.object.text) %></li>
+<li><%= f.submit 'save', :name => :execute %></li>
+</ul>
+<%end%>
+</div>
+</div>

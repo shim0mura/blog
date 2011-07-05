@@ -32,10 +32,12 @@ class BlogController < ApplicationController
   def edit
     basic_authentication
     if params[:confirm]
-      @entry = Entry.find_by_path(params[:path])
+      @entry = Entry.new(params[:entry])
+      render :confirm
     elsif params[:execute]
-      @entry = Entry.find(params[:id])
+      @entry = Entry.find_by_path(params[:path])
       @entry.update_attributes!(params[:entry])
+      redirect_to :index
     end
 
     @entry = Entry.find_by_path(params[:path])
