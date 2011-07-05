@@ -4,7 +4,7 @@ class Contents < ActiveRecord::Migration
       t.string :path
       t.string :title
       t.string :title_photo_url
-      t.string :text
+      t.text :text
       t.timestamps
     end
   end
